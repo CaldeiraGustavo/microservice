@@ -1,0 +1,831 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "Documentação Microserviço agenda médica",
+        "description": "Swagger Microserviço agenda médica",
+        "contact": {
+            "email": "1094820@sga.pucminas.br"
+        },
+        "license": {
+            "name": "Apache 2.0",
+            "url": "http://www.apache.org/licenses/LICENSE-2.0.html"
+        },
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/agenda": {
+            "get": {
+                "tags": [
+                    "Agenda"
+                ],
+                "summary": "Retorna todas as agendas",
+                "description": "Retorna todas as agendas",
+                "operationId": "97a759a3056cfc72c31a7613d6a9d082",
+                "responses": {
+                    "200": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados de retorno",
+                                        "value": {
+                                            "id": "1",
+                                            "data": "13/10/2023"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Agenda"
+                ],
+                "summary": "Edita agenda",
+                "description": "Edita agenda",
+                "operationId": "4fc2c96d208b54d96a73bf4d6eae337f",
+                "responses": {
+                    "200": {
+                        "description": "Salvo com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Agenda"
+                ],
+                "summary": "Cadastra nova agenda",
+                "description": "Cadastra nova agenda",
+                "operationId": "971a3fd96118d11e0939c5881f73a3ae",
+                "responses": {
+                    "201": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/agenda/{id}": {
+            "get": {
+                "tags": [
+                    "Agenda"
+                ],
+                "summary": "Retorna agenda pelo id",
+                "description": "Retorna agenda pelo id",
+                "operationId": "2e16cafcd019777aa8b41e780b53c710",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da agenda",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Agenda"
+                ],
+                "summary": "Apaga registro da agenda",
+                "description": "Apaga registro da agenda",
+                "operationId": "bb8d1fd952a7d2168e34a959a203358a",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da agenda",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Apagado com sucesso."
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/medico": {
+            "get": {
+                "tags": [
+                    "Medico"
+                ],
+                "summary": "Retorna todos os médicos",
+                "description": "Retorna todos os médicos",
+                "operationId": "421d909be23a4c9d5f809ed9017f3d11",
+                "responses": {
+                    "200": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados de retorno",
+                                        "value": {
+                                            "id": "1",
+                                            "data": "13/10/2023"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Medico"
+                ],
+                "summary": "Edita dados do médico",
+                "description": "Edita dados do médico",
+                "operationId": "a67ee97473309688fb5b2ee5f1ceae74",
+                "responses": {
+                    "200": {
+                        "description": "Salvo com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Medico"
+                ],
+                "summary": "Cadastra novo médico",
+                "description": "Cadastra novo médico",
+                "operationId": "bedc9ece9372da69fc4d70534018e129",
+                "responses": {
+                    "201": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/medico/{id}": {
+            "get": {
+                "tags": [
+                    "Medico"
+                ],
+                "summary": "Retorna médico pelo ID",
+                "description": "Retorna médico pelo ID",
+                "operationId": "b7171ab84ab8ef8ca64b2a8186fcbf7d",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do médico",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Medico"
+                ],
+                "summary": "Apaga registro do médico",
+                "description": "Apaga registro do médico",
+                "operationId": "d115f850105ac262f5707a2bd673fd53",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id do médico",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Apagado com sucesso."
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        }
+    },
+    "components": {
+        "securitySchemes": {
+            "api_token": {
+                "type": "apiKey",
+                "description": "Entre com o token beraer no formato **Bearer &lt;token>**",
+                "name": "Authorization",
+                "in": "header"
+            }
+        }
+    },
+    "tags": [
+        {
+            "name": "Agenda",
+            "description": "Endpoints para agenda do médico"
+        },
+        {
+            "name": "Medico",
+            "description": "Endpoints para dados relacionados aos médicos"
+        }
+    ]
+}
