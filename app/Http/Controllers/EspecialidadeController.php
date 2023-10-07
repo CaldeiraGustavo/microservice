@@ -2,19 +2,18 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Medico;
-use App\Models\MedicoEspecialidade;
+use App\Models\Especialidade;
 use Illuminate\Http\Request;
 use Illuminate\Http\Response;
 
-class MedicoController extends Controller
+class EspecialidadeController extends Controller
 {
     /**
      * @OA\Get(
-     *     path="/medico",
-     *     tags={"Medico"},
-     *     summary="Retorna todos os médicos",
-     *     description="Retorna todos os médicos",
+     *     path="/especialidade",
+     *     tags={"Especialidade"},
+     *     summary="Retorna todas as especialidades",
+     *     description="Retorna todas as especialidades",
      *     security={{ "api_token": {} }},
      *     @OA\Response(
      *          response=200,
@@ -44,15 +43,15 @@ class MedicoController extends Controller
      */
     public function index()
     {
-        return response()->json(Medico::all());
+        return response()->json(Especialidade::all());
     }
 
     /**
      * @OA\Post(
-     *     path="/medico",
-     *     tags={"Medico"},
-     *     summary="Cadastra novo médico",
-     *     description="Cadastra novo médico",
+     *     path="/especialidade",
+     *     tags={"Especialidade"},
+     *     summary="Cadastra nova especialidade",
+     *     description="Cadastra nova especialidade",
      *     security={{ "api_token": {} }},
      *     @OA\Response(
      *          response=201,
@@ -90,19 +89,19 @@ class MedicoController extends Controller
      */
     public function store(Request $request)
     {
-        $medico = Medico::create($request->toArray());
-        return response()->json($medico, Response::HTTP_CREATED);
+        $especialidade = Especialidade::create($request->toArray());
+        return response()->json($especialidade, Response::HTTP_CREATED);
     }
 
     /**
      * @OA\Get(
-     *     path="/medico/{id}",
-     *     tags={"Medico"},
-     *     summary="Retorna médico pelo ID",
-     *     description="Retorna médico pelo ID",
+     *     path="/especialidade/{id}",
+     *     tags={"Especialidade"},
+     *     summary="Retorna especialidade pelo ID",
+     *     description="Retorna especialidade pelo ID",
      *     security={{ "api_token": {} }},
      *     @OA\Parameter(
-     *        description="Id do médico",
+     *        description="Id da especialidade",
      *        in="path",
      *        name="id",
      *        example="1",
@@ -148,15 +147,15 @@ class MedicoController extends Controller
      */
     public function show(string $id)
     {
-        return response()->json(Medico::findOrFail($id));
+        return response()->json(Especialidade::findOrFail($id));
     }
 
     /**
      * @OA\Put(
-     *     path="/medico",
-     *     tags={"Medico"},
-     *     summary="Edita dados do médico",
-     *     description="Edita dados do médico",
+     *     path="/especialidade",
+     *     tags={"Especialidade"},
+     *     summary="Edita dados da especialidade",
+     *     description="Edita dados da especialidade",
      *     security={{ "api_token": {} }},
      *     @OA\Response(
      *          response=200,
@@ -194,19 +193,19 @@ class MedicoController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        $medico = Medico::find($id)->update($request->toArray());
-        return response()->json($medico, Response::HTTP_OK);
+        $especialidade = Especialidade::find($id)->update($request->toArray());
+        return response()->json($especialidade, Response::HTTP_OK);
     }
 
     /**
      * @OA\Delete(
-     *     path="/medico/{id}",
-     *     tags={"Medico"},
-     *     summary="Apaga registro do médico",
-     *     description="Apaga registro do médico",
+     *     path="/especialidade/{id}",
+     *     tags={"Especialidade"},
+     *     summary="Apaga registro da especialidade",
+     *     description="Apaga registro da especialidade",
      *     security={{ "api_token": {} }},
      *     @OA\Parameter(
-     *        description="Id do médico",
+     *        description="Id da especialidade",
      *        in="path",
      *        name="id",
      *        example="1",
@@ -247,53 +246,7 @@ class MedicoController extends Controller
      */
     public function destroy(string $id)
     {
-        Medico::findOrFail($id)->delete();
+        Especialidade::findOrFail($id)->delete();
         return response()->json([], Response::HTTP_NO_CONTENT);
-    }
-
-    /**
-     * @OA\Post(
-     *     path="/medico-especialidade",
-     *     tags={"Medico"},
-     *     summary="Cadastra nova especialidade para o médico",
-     *     description="Cadastra nova especialidade para o médico",
-     *     security={{ "api_token": {} }},
-     *     @OA\Response(
-     *          response=201,
-     *          description="Cadastrado com sucesso.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Exemplo de mensagem de sucesso"},
-     *                  summary="Salvo com sucesso"))),
-     *     @OA\Response(
-     *          response=401,
-     *          description="Não autenticado",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "unauthenticated"},
-     *                  summary="Não autenticado"))),
-     *     @OA\Response(
-     *          response=422,
-     *          description="Entrada de dados inválida.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Dados inválidos."},
-     *                  summary="Dados inválidos"))),
-     *     @OA\Response(
-     *          response=500,
-     *          description="Erro interno do servidor.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Exemplo de mensagem de erro"},
-     *                  summary="Mensagem de erro da exception"))),
-     * ),
-     */
-    public function attachToDoctor(Request $request)
-    {
-        MedicoEspecialidade::create($request->toArray());
     }
 }

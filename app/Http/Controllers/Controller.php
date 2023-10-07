@@ -37,6 +37,11 @@ use Illuminate\Routing\Controller as BaseController;
  * ),
  *
  * @OA\Tag(
+ *     name="Especialidade",
+ *     description="Endpoints para especialidades médicas"
+ * )
+ *
+ * @OA\Tag(
  *     name="Medico",
  *     description="Endpoints para dados relacionados aos médicos"
  * )

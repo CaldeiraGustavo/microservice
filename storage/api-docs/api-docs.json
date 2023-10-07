@@ -410,6 +410,403 @@
                 ]
             }
         },
+        "/especialidade": {
+            "get": {
+                "tags": [
+                    "Especialidade"
+                ],
+                "summary": "Retorna todas as especialidades",
+                "description": "Retorna todas as especialidades",
+                "operationId": "e02eb56b1425e8c7eaaf9e92c8e319de",
+                "responses": {
+                    "200": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados de retorno",
+                                        "value": {
+                                            "id": "1",
+                                            "data": "13/10/2023"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "put": {
+                "tags": [
+                    "Especialidade"
+                ],
+                "summary": "Edita dados da especialidade",
+                "description": "Edita dados da especialidade",
+                "operationId": "96b0247395049a926b5aa3e850d9b534",
+                "responses": {
+                    "200": {
+                        "description": "Salvo com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "post": {
+                "tags": [
+                    "Especialidade"
+                ],
+                "summary": "Cadastra nova especialidade",
+                "description": "Cadastra nova especialidade",
+                "operationId": "b94f28d78ea4a77143c8f7904f16bf59",
+                "responses": {
+                    "201": {
+                        "description": "Cadastrado com sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
+        "/especialidade/{id}": {
+            "get": {
+                "tags": [
+                    "Especialidade"
+                ],
+                "summary": "Retorna especialidade pelo ID",
+                "description": "Retorna especialidade pelo ID",
+                "operationId": "a01165145d1b92097266df8e3afd4d07",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da especialidade",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "Sucesso.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Salvo com sucesso",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de sucesso"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            },
+            "delete": {
+                "tags": [
+                    "Especialidade"
+                ],
+                "summary": "Apaga registro da especialidade",
+                "description": "Apaga registro da especialidade",
+                "operationId": "5056d60920c209d4dc1cbba59ee7861f",
+                "parameters": [
+                    {
+                        "name": "id",
+                        "in": "path",
+                        "description": "Id da especialidade",
+                        "required": true,
+                        "schema": {
+                            "type": "integer",
+                            "format": "int64"
+                        },
+                        "example": "1"
+                    }
+                ],
+                "responses": {
+                    "204": {
+                        "description": "Apagado com sucesso."
+                    },
+                    "401": {
+                        "description": "Não autenticado",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Não autenticado",
+                                        "value": {
+                                            "message": "unauthenticated"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "422": {
+                        "description": "Entrada de dados inválida.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Dados inválidos",
+                                        "value": {
+                                            "message": "Dados inválidos."
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    },
+                    "500": {
+                        "description": "Erro interno do servidor.",
+                        "content": {
+                            "application/json": {
+                                "schema": {},
+                                "examples": {
+                                    "result": {
+                                        "summary": "Mensagem de erro da exception",
+                                        "value": {
+                                            "message": "Exemplo de mensagem de erro"
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                },
+                "security": [
+                    {
+                        "api_token": []
+                    }
+                ]
+            }
+        },
         "/medico": {
             "get": {
                 "tags": [
@@ -822,6 +1219,10 @@
         {
             "name": "Agenda",
             "description": "Endpoints para agenda do médico"
+        },
+        {
+            "name": "Especialidade",
+            "description": "Endpoints para especialidades médicas"
         },
         {
             "name": "Medico",

@@ -2,7 +2,9 @@
 
 namespace App\Http\Controllers;
 
+use App\Models\AgendaMedica;
 use Illuminate\Http\Request;
+use Illuminate\Http\Response;
 
 class AgendaController extends Controller
 {
@@ -41,7 +43,7 @@ class AgendaController extends Controller
      */
     public function index()
     {
-        //
+        return response()->json(AgendaMedica::all());
     }
 
     /**
@@ -87,7 +89,8 @@ class AgendaController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        $agendaMedica = AgendaMedica::create();
+        return response()->json($agendaMedica, Response::HTTP_CREATED);
     }
 
     /**
@@ -144,7 +147,7 @@ class AgendaController extends Controller
      */
     public function show(string $id)
     {
-        //
+        return response()->json(AgendaMedica::findOrFail($id));
     }
 
     /**
@@ -190,7 +193,8 @@ class AgendaController extends Controller
      */
     public function update(Request $request, string $id)
     {
-        //
+        $agendaMedica = AgendaMedica::find($id)->update($request->toArray());
+        return response()->json($agendaMedica, Response::HTTP_CREATED);
     }
 
     /**
@@ -242,6 +246,7 @@ class AgendaController extends Controller
      */
     public function destroy(string $id)
     {
-        //
+        AgendaMedica::findOrFail($id)->delete();
+        return response()->json([], Response::HTTP_NO_CONTENT);
     }
 }
