@@ -7,6 +7,20 @@ use Illuminate\Database\Eloquent\Model;
 
 class Consulta extends Model
 {
+    /**
+     * @OA\Schema(
+     *     schema="Consulta",
+     *     type="object",
+     *     title="Consulta",
+     *     @OA\Property(property="data_hora", type="string", format="date-time"),
+     *     @OA\Property(property="unidade_atendimento", type="integer", format="int64"),
+     *     @OA\Property(property="tipo", type="string"),
+     *     @OA\Property(property="observacoes", type="string"),
+     *     @OA\Property(property="fk_medico_id", type="integer", format="int64"),
+     *     @OA\Property(property="fk_paciente_id", type="integer", format="int64"),
+     * )
+     */
+
     protected $table = 'consulta';
     protected $primaryKey = 'id';
     public $timestamps = false;

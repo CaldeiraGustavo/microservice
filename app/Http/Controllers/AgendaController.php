@@ -53,6 +53,11 @@ class AgendaController extends Controller
      *     summary="Cadastra nova agenda",
      *     description="Cadastra nova agenda",
      *     security={{ "api_token": {} }},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados da agenda",
+     *         @OA\JsonContent(ref="#/components/schemas/AgendaMedica")
+     *     ),
      *     @OA\Response(
      *          response=201,
      *          description="Cadastrado com sucesso.",
@@ -152,11 +157,27 @@ class AgendaController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/agenda",
+     *     path="/agenda/{id}",
      *     tags={"Agenda"},
      *     summary="Edita agenda",
      *     description="Edita agenda",
      *     security={{ "api_token": {} }},
+     *     @OA\Parameter(
+     *        description="Id da agenda",
+     *        in="path",
+     *        name="id",
+     *        example="1",
+     *        required=true,
+     *        @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *        ),
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados da agenda a serem atualizados",
+     *         @OA\JsonContent(ref="#/components/schemas/AgendaMedica")
+     *     ),
      *     @OA\Response(
      *          response=200,
      *          description="Salvo com sucesso.",

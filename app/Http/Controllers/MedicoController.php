@@ -54,6 +54,11 @@ class MedicoController extends Controller
      *     summary="Cadastra novo médico",
      *     description="Cadastra novo médico",
      *     security={{ "api_token": {} }},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados do médico a serem atualizados",
+     *         @OA\JsonContent(ref="#/components/schemas/Medico")
+     *     ),
      *     @OA\Response(
      *          response=201,
      *          description="Cadastrado com sucesso.",
@@ -153,11 +158,27 @@ class MedicoController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/medico",
+     *     path="/medico/{id}",
      *     tags={"Medico"},
      *     summary="Edita dados do médico",
      *     description="Edita dados do médico",
      *     security={{ "api_token": {} }},
+     *     @OA\Parameter(
+     *        description="Id da agenda",
+     *        in="path",
+     *        name="id",
+     *        example="1",
+     *        required=true,
+     *        @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *        ),
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados do médico a serem atualizados",
+     *         @OA\JsonContent(ref="#/components/schemas/Medico")
+     *     ),
      *     @OA\Response(
      *          response=200,
      *          description="Salvo com sucesso.",

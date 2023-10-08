@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class MedicoEspecialidade extends Model
 {
+    /**
+     * @OA\Schema(
+     *     schema="MedicoEspecialidade",
+     *     type="object",
+     *     title="MedicoEspecialidade",
+     *     @OA\Property(property="fk_medico_id", type="integer", format="int64"),
+     *     @OA\Property(property="fk_especialidade_id", type="integer", format="int64"),
+     * )
+     */
+
     protected $table = 'medico_especialidade';
     public $timestamps = false;
 

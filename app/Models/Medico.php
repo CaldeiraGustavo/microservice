@@ -7,6 +7,18 @@ use Illuminate\Database\Eloquent\Model;
 
 class Medico extends Model
 {
+    /**
+     * @OA\Schema(
+     *     schema="Medico",
+     *     type="object",
+     *     title="Medico",
+     *     @OA\Property(property="nome", type="string"),
+     *     @OA\Property(property="uf", type="string"),
+     *     @OA\Property(property="municipio", type="string"),
+     *     @OA\Property(property="crm", type="string"),
+     *     @OA\Property(property="fk_usuario_id", type="integer", format="int64"),
+     * )
+     */
     use HasFactory;
     protected $table = 'medico';
     public $timestamps = false;

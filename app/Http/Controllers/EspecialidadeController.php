@@ -53,6 +53,11 @@ class EspecialidadeController extends Controller
      *     summary="Cadastra nova especialidade",
      *     description="Cadastra nova especialidade",
      *     security={{ "api_token": {} }},
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados da especialidade",
+     *         @OA\JsonContent(ref="#/components/schemas/Especialidade")
+     *     ),
      *     @OA\Response(
      *          response=201,
      *          description="Cadastrado com sucesso.",
@@ -152,11 +157,27 @@ class EspecialidadeController extends Controller
 
     /**
      * @OA\Put(
-     *     path="/especialidade",
+     *     path="/especialidade/{id}",
      *     tags={"Especialidade"},
      *     summary="Edita dados da especialidade",
      *     description="Edita dados da especialidade",
      *     security={{ "api_token": {} }},
+     *     @OA\Parameter(
+     *        description="Id da especialidade",
+     *        in="path",
+     *        name="id",
+     *        example="1",
+     *        required=true,
+     *        @OA\Schema(
+     *           type="integer",
+     *           format="int64"
+     *        ),
+     *     ),
+     *     @OA\RequestBody(
+     *         required=true,
+     *         description="Dados da especialidade a serem atualizados",
+     *         @OA\JsonContent(ref="#/components/schemas/Especialidade")
+     *     ),
      *     @OA\Response(
      *          response=200,
      *          description="Salvo com sucesso.",

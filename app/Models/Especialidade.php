@@ -7,6 +7,16 @@ use Illuminate\Database\Eloquent\Model;
 
 class Especialidade extends Model
 {
+    /**
+     * @OA\Schema(
+     *     schema="Especialidade",
+     *     type="object",
+     *     title="Especialidade",
+     *     @OA\Property(property="nome", type="string"),
+     *     @OA\Property(property="categoria", type="string"),
+     * )
+     */
+
     protected $table = 'especialidade';
     protected $primaryKey = 'id';
     public $timestamps = false;

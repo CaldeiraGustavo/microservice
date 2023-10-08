@@ -7,6 +7,19 @@ use Illuminate\Database\Eloquent\Model;
 
 class Exame extends Model
 {
+    /**
+     * @OA\Schema(
+     *     schema="Exames",
+     *     type="object",
+     *     title="Exames",
+     *     @OA\Property(property="cod_exame", type="integer", format="int64"),
+     *     @OA\Property(property="nome_exame", type="string"),
+     *     @OA\Property(property="metodo_realizacao", type="string"),
+     *     @OA\Property(property="indicacao", type="string"),
+     *     @OA\Property(property="parte_corpo", type="string"),
+     * )
+     */
+
     protected $table = 'exames';
     protected $primaryKey = 'id';
     public $timestamps = false;
