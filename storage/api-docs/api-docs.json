@@ -31,14 +31,10 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Dados de retorno",
-                                        "value": {
-                                            "id": "1",
-                                            "data": "13/10/2023"
-                                        }
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/AgendaMedica"
                                     }
                                 }
                             }
@@ -106,14 +102,8 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgendaMedica"
                                 }
                             }
                         }
@@ -200,14 +190,8 @@
                         "description": "Sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgendaMedica"
                                 }
                             }
                         }
@@ -303,14 +287,8 @@
                         "description": "Salvo com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/AgendaMedica"
                                 }
                             }
                         }
@@ -463,14 +441,10 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Dados de retorno",
-                                        "value": {
-                                            "id": "1",
-                                            "data": "13/10/2023"
-                                        }
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Especialidade"
                                     }
                                 }
                             }
@@ -538,14 +512,8 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Especialidade"
                                 }
                             }
                         }
@@ -632,14 +600,8 @@
                         "description": "Sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Especialidade"
                                 }
                             }
                         }
@@ -735,14 +697,8 @@
                         "description": "Salvo com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Especialidade"
                                 }
                             }
                         }
@@ -830,14 +786,8 @@
                         "description": "Não autenticado",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Não autenticado",
-                                        "value": {
-                                            "message": "unauthenticated"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Especialidade"
                                 }
                             }
                         }
@@ -895,14 +845,10 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Dados de retorno",
-                                        "value": {
-                                            "id": "1",
-                                            "data": "13/10/2023"
-                                        }
+                                "schema": {
+                                    "type": "array",
+                                    "items": {
+                                        "$ref": "#/components/schemas/Medico"
                                     }
                                 }
                             }
@@ -970,14 +916,8 @@
                         "description": "Cadastrado com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Medico"
                                 }
                             }
                         }
@@ -1064,14 +1004,8 @@
                         "description": "Sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Medico"
                                 }
                             }
                         }
@@ -1167,14 +1101,8 @@
                         "description": "Salvo com sucesso.",
                         "content": {
                             "application/json": {
-                                "schema": {},
-                                "examples": {
-                                    "result": {
-                                        "summary": "Salvo com sucesso",
-                                        "value": {
-                                            "message": "Exemplo de mensagem de sucesso"
-                                        }
-                                    }
+                                "schema": {
+                                    "$ref": "#/components/schemas/Medico"
                                 }
                             }
                         }

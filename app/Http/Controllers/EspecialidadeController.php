@@ -18,11 +18,7 @@ class EspecialidadeController extends Controller
      *     @OA\Response(
      *          response=200,
      *          description="Cadastrado com sucesso.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"id": "1", "data": "13/10/2023"},
-     *                  summary="Dados de retorno"))),
+     *          @OA\JsonContent(type="array", @OA\Items(ref="#/components/schemas/Especialidade"))),
      *     @OA\Response(
      *          response=401,
      *          description="Não autenticado",
@@ -61,11 +57,7 @@ class EspecialidadeController extends Controller
      *     @OA\Response(
      *          response=201,
      *          description="Cadastrado com sucesso.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Exemplo de mensagem de sucesso"},
-     *                  summary="Salvo com sucesso"))),
+     *          @OA\JsonContent(ref="#/components/schemas/Especialidade")),
      *     @OA\Response(
      *          response=401,
      *          description="Não autenticado",
@@ -119,11 +111,7 @@ class EspecialidadeController extends Controller
      *     @OA\Response(
      *          response=200,
      *          description="Sucesso.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Exemplo de mensagem de sucesso"},
-     *                  summary="Salvo com sucesso"))),
+     *          @OA\JsonContent(ref="#/components/schemas/Especialidade")),
      *     @OA\Response(
      *          response=401,
      *          description="Não autenticado",
@@ -181,11 +169,7 @@ class EspecialidadeController extends Controller
      *     @OA\Response(
      *          response=200,
      *          description="Salvo com sucesso.",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "Exemplo de mensagem de sucesso"},
-     *                  summary="Salvo com sucesso"))),
+     *          @OA\JsonContent(ref="#/components/schemas/Especialidade")),
      *     @OA\Response(
      *          response=401,
      *          description="Não autenticado",
@@ -242,11 +226,7 @@ class EspecialidadeController extends Controller
      *     @OA\Response(
      *          response=401,
      *          description="Não autenticado",
-     *          @OA\JsonContent(
-     *              @OA\Examples(
-     *                  example="result",
-     *                  value={"message": "unauthenticated"},
-     *                  summary="Não autenticado"))),
+     *          @OA\JsonContent(ref="#/components/schemas/Especialidade")),
      *     @OA\Response(
      *          response=422,
      *          description="Entrada de dados inválida.",
